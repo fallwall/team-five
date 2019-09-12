@@ -1,0 +1,14 @@
+button {
+    background: blue;
+    color: white;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 2em;
+    margin: 20px;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+}
