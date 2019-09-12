@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import { postLog } from './services/api';
+import decode from 'jwt-decode';
+import {
+  postLog,
+  loginUser,
+  registerUser
+} from './services/api';
 
 import Scaler from './Scaler';
 import Login from './Login';
+import Register from './Register';
 import Wordbank from './Wordbank';
 import Thankyou from './ThankYou';
 import './App.css';
@@ -12,25 +18,78 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      formData: {
+      userForm: {
         username: "",
+        email: "",
+        password: ""
+      },
+      currentUser: null,
+      formData: {
+        user_id: "",
         feeling_scale: "",
         feelings: "",
         comment: ""
       },
       view: {
         loginView: true,
+        registerView: false,
         formView: false,
         thankyouView: false
       }
     }
   }
 
+  componentDidMount = () => {
+    const checkUser = localStorage.getItem("jwt");
+    if (checkUser) {
+      const user = decode(checkUser);
+      this.setState({
+        currentUser: user
+      })
+    }
+  }
+
+  handleLogin = async () => {
+    const userData = await loginUser(this.state.userForm);
+    this.setState({
+      currentUser: decode(userData.token)
+    })
+    localStorage.setItem("jwt", userData.token)
+  }
+
+  handleRegister = async (e) => {
+    e.preventDefault();
+    await registerUser(this.state.userForm);
+    this.handleLogin();
+  }
+
+  authHandleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState(prevState => ({
+      userForm: {
+        ...prevState.userForm,
+        [name]: value
+      }
+    }));
+  }
+
+  toRegisterView = () => {
+    this.setState({
+      view: {
+        loginView: false,
+        registerView: true,
+        formView: false,
+        thankyouView: false
+      }
+    })
+  }
+
+
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
-      formData: {
-        ...prevState.formData,
+      userForm: {
+        ...prevState.userForm,
         [name]: value
       }
     }))
@@ -42,6 +101,7 @@ class App extends Component {
     this.setState({
       view: {
         loginView: false,
+        registerView: false,
         formView: false,
         thankyouView: true
       }
@@ -52,6 +112,7 @@ class App extends Component {
     this.setState({
       view: {
         loginView: false,
+        registerView: false,
         formView: true,
         thankyouView: false
       }
@@ -63,6 +124,7 @@ class App extends Component {
     this.setState({
       view: {
         loginView: true,
+        registerView: false,
         formView: false,
         thankyouView: false
       },
@@ -80,9 +142,22 @@ class App extends Component {
       <div className="App">
         {this.state.view.loginView &&
           <Login
-            onChange={this.handleChange}
+            onChange={this.authHandleChange}
             nextButton={this.handleChangeView}
-            username={this.state.formData.username}
+            username={this.state.userForm.username}
+            onSubmit={this.handleLogin}
+            password={this.state.userForm.password}
+            toRegisterView={this.toRegisterView}
+          />
+        }
+        {this.state.view.registerView &&
+          <Register
+            onChange={this.authHandleChange}
+            onSubmit={this.handleRegister}
+            nextButton={this.handleChangeView}
+            username={this.state.userForm.username}
+            email={this.state.userForm.email}
+            password={this.state.userForm.password}
           />
         }
         {this.state.view.formView &&
