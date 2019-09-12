@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   def index 
     @logs = Log.all
-    render json: @logs, include: :logs, status: :ok
+    render json: @logs, status: :ok
   end
 
   def show
@@ -21,7 +21,7 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:feeling_scale, :feelings, :comment, :student)
+    params.require(:log).permit(:feeling_scale, :feelings, :comment, :username)
   end
 
 end

@@ -1,42 +1,66 @@
 import React, { useState } from 'react';
 import { Slider } from "react-semantic-ui-range";
-// import "semantic-ui-css/semantic.min.css";
 import { Label, Grid, Input } from "semantic-ui-react";
 import './scaler.css';
 
 const Scaler = (props) => {
-  const [value, setValue] = useState(5);
+  const [value, setValue] = useState(3);
 
   const settings = {
     start: 0,
     min: 0,
-    max: 10,
+    max: 4,
     step: 1,
     onChange: value => {
       setValue(value);
     }
   };
 
-  const handleValueChange = e => {
+  const handleValueChange = (e) => {
     let value = parseInt(e.target.value);
     if (!value) {
       value = 0;
     }
     setValue(e.target.value);
+    props.handleChnage(parseInt(e.target.value));
   };
+
+  const translator = (val) => {
+    switch (val) {
+      case 0:
+        return "Very Negative";
+        break;
+      case 1:
+        return "Negative";
+        break;
+      case 2:
+        return "Okay";
+        break;
+      case 3:
+        return "Positive";
+        break;
+      case 4:
+        return "Very Positive";
+        break;
+      default:
+        return "";
+    }
+  }
 
   return (
     <div className="scaler">
+      <p>How are you feeling today?</p>
       <Grid>
         <Grid.Column width={16}>
           <Slider value={value} color="blue" settings={settings} />
         </Grid.Column>
         <Grid.Column width={16}>
           <Input placeholder="Enter Value" onChange={handleValueChange} />
-          <Label color="blue">{value}</Label>
+          <Label color="blue">{value + 1}</Label>
+          <Label color="blue">{translator(value)}</Label>
         </Grid.Column>
       </Grid>
-      <button>Next</button>
+      <button onClick={props.nextButton}>Next</button>
     </div>
   );
 };
