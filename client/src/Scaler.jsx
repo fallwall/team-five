@@ -52,10 +52,13 @@ const Scaler = (props) => {
       <p>How are you feeling today?</p>
       <Grid>
         <Grid.Column width={16}>
-          <Slider value={value} color="black" style={{ 'background-color': 'white' }} settings={settings} />
+
+          <Slider value={value} color="black" settings={settings} />
         </Grid.Column>
         <Grid.Column width={16}>
-          <Label color="blue">{value + 1}</Label>
+          <Input placeholder="Enter Value" onChange={handleValueChange} />
+          <Label color="red">{value + 1}</Label>
+
           <Label color="blue">{translator(value)}</Label>
         </Grid.Column>
       </Grid>
