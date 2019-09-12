@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
   def index 
     @logs = Log.all
-    render json: @logs, include: :logs, status: :ok
+    render json: @logs, status: :ok
   end
 
   def show
