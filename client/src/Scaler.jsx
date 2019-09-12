@@ -4,7 +4,7 @@ import { Slider } from "react-semantic-ui-range";
 import { Label, Grid, Input } from "semantic-ui-react";
 import './scaler.css';
 
-const Scaler = props => {
+const Scaler = (props) => {
   const [value, setValue] = useState(5);
 
   const settings = {
@@ -26,15 +26,18 @@ const Scaler = props => {
   };
 
   return (
-    <Grid>
-      <Grid.Column width={16}>
-        <Slider value={value} color="blue" settings={settings} />
-      </Grid.Column>
-      <Grid.Column width={16}>
-        <Input placeholder="Enter Value" onChange={handleValueChange} />
-        <Label color="blue">{value}</Label>
-      </Grid.Column>
-    </Grid>
+    <div className="scaler">
+      <Grid>
+        <Grid.Column width={16}>
+          <Slider value={value} color="blue" settings={settings} />
+        </Grid.Column>
+        <Grid.Column width={16}>
+          <Input placeholder="Enter Value" onChange={handleValueChange} />
+          <Label color="blue">{value}</Label>
+        </Grid.Column>
+      </Grid>
+      <button>Next</button>
+    </div>
   );
 };
 
