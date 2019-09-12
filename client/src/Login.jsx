@@ -1,13 +1,13 @@
 import React from 'react';
-import './Login.css';
+import './login.css';
 
-export default function Login() {
+export default function Login(props) {
   return (
     <div>
       <form>
         <label htmlFor="name">Name</label>
         <input type="text" />
-        <button>LOGIN</button>
+        <button onClick={props.nextButton}>LOGIN</button>
       </form>
     </div>
   )
