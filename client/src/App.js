@@ -75,18 +75,21 @@ class App extends Component {
           <Login
             onChange={this.handleChange}
             nextButton={this.toScalerView}
+            username={this.state.formData.username}
           />
         }
         {this.state.views.scaleView &&
           <Scaler
             onChange={this.handleChange}
             nextButton={this.toSubmitView}
+            feeling_scale={this.state.formData.feeling_scale}
           />
         }
         {this.state.views.submitView &&
           <Wordbank
             onChange={this.handleChange}
             nextButton={this.toLoginView}
+            comment={this.state.formData.comment}
           />
         }
       </div>

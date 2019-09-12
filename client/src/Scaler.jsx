@@ -22,6 +22,7 @@ const Scaler = (props) => {
       value = 0;
     }
     setValue(e.target.value);
+    props.handleChnage(parseInt(e.target.value));
   };
 
   const translator = (val) => {

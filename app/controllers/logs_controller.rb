@@ -21,7 +21,7 @@ class LogsController < ApplicationController
   private
 
   def log_params
-    params.require(:log).permit(:feeling_scale, :feelings, :comment, :student)
+    params.require(:log).permit(:feeling_scale, :feelings, :comment, :username)
   end
 
 end
