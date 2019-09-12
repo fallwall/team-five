@@ -22,7 +22,7 @@ const Scaler = (props) => {
       value = 0;
     }
     setValue(e.target.value);
-    props.handleChnage(parseInt(e.target.value));
+    props.handleChange(parseInt(e.target.value));
   };
 
   const translator = (val) => {
@@ -52,7 +52,7 @@ const Scaler = (props) => {
       <p>How are you feeling today?</p>
       <Grid>
         <Grid.Column width={16}>
-          <Slider value={value} color="blue" settings={settings} />
+          <Slider value={value} color="black" style={{'background-color': 'white'}} settings={settings} />
         </Grid.Column>
         <Grid.Column width={16}>
           <Input placeholder="Enter Value" onChange={handleValueChange} />
@@ -60,7 +60,7 @@ const Scaler = (props) => {
           <Label color="blue">{translator(value)}</Label>
         </Grid.Column>
       </Grid>
-      <button onClick={props.nextButton}>Next</button>
+      <button name="feeling_scale" value={props.value} onChange={props.onChange} onClick={props.nextButton}>Next</button>
     </div>
   );
 };
