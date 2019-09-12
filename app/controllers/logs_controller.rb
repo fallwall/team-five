@@ -1,4 +1,6 @@
 class LogsController < ApplicationController
+  # before_action :authorize_request, except: %i[index show]
+  
   def index 
     @logs = Log.all
     render json: @logs, status: :ok
