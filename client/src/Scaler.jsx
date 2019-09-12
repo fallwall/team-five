@@ -22,7 +22,7 @@ const Scaler = (props) => {
       value = 0;
     }
     setValue(e.target.value);
-    props.handleChnage(parseInt(e.target.value));
+    props.handleChange(parseInt(e.target.value));
   };
 
   const translator = (val) => {
@@ -60,7 +60,7 @@ const Scaler = (props) => {
           <Label color="blue">{translator(value)}</Label>
         </Grid.Column>
       </Grid>
-      <button onClick={props.nextButton}>Next</button>
+      <button name="feeling_scale" value={props.value} onChange={props.onChange} onClick={props.nextButton}>Next</button>
     </div>
   );
 };

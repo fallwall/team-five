@@ -28,7 +28,7 @@ function Wordbank(props) {
         </div>
       <h1>Optional: Is there anything else you would like your teacher to know today?</h1>
       <textarea value={props.comment} name="comment" onChange={props.onChange}></textarea>
-      <button onClick={props.nextButton}>Submit</button>
+      <button onClick={props.onSubmit}>Submit</button>
       </div>
     </>
   )
