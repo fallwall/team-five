@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  feeling_scale: MyString
+  feelings: MyString
+  comment: MyString
+
+two:
+  username: MyString
+  feeling_scale: MyString
+  feelings: MyString
+  comment: MyString
