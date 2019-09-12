@@ -4,7 +4,7 @@ import { postLog } from './services/api';
 import Scaler from './Scaler';
 import Login from './Login';
 import Wordbank from './Wordbank';
-
+import Thankyou from './ThankYou';
 import './App.css';
 
 
@@ -20,7 +20,8 @@ class App extends Component {
       },
       view: {
         loginView: true,
-        formView: false
+        formView: false,
+        thankyouView: false
       }
     }
   }
@@ -40,8 +41,9 @@ class App extends Component {
     console.log(resp);
     this.setState({
       view: {
-        loginView: true,
-        formView: false
+        loginView: false,
+        formView: false,
+        thankyouView: true
       }
     })
   }
@@ -50,7 +52,25 @@ class App extends Component {
     this.setState({
       view: {
         loginView: false,
-        formView: true
+        formView: true,
+        thankyouView: false
+      }
+    })
+  }
+
+  backtoLogin = (ev) => {
+    ev.preventDefault();
+    this.setState({
+      view: {
+        loginView: true,
+        formView: false,
+        thankyouView: false
+      },
+      formData: {
+        username: "",
+        feeling_scale: "",
+        feelings: "",
+        comment: ""
       }
     })
   }
@@ -77,6 +97,12 @@ class App extends Component {
               comment={this.state.formData.comment}
             />
           </>
+        }
+        {this.state.view.thankyouView &&
+          <Thankyou
+            nextButton={this.backtoLogin}
+
+          />
         }
       </div>
     );
