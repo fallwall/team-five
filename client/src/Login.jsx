@@ -1,12 +1,12 @@
 import React from 'react';
-import './Login.css';
+import './login.css';
 
 export default function Login() {
   return (
-    <div>
+    <div class="login-div">
       <form>
-        <label htmlFor="name">Name</label>
-        <input type="text" />
+        <label class="name-label" htmlFor="name">Name</label>
+        <input class="name-input" type="text" /><br/>
         <button>LOGIN</button>
       </form>
     </div>

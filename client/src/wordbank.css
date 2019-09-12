@@ -1,14 +1,28 @@
+.wordbank-container {
+    width: 900px;
+    height: 600px;
+    border: 2px solid green;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.word-div {
+    /* width: 80%; */
+}
+
 button {
     background: blue;
     color: white;
-    width: 200px;
+    /* width: 200px; */
     height: 50px;
     border-radius: 10px;
     font-size: 2em;
-    margin: 20px;
+    margin: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 textarea {
-    width: 400px;
+    width: 90%;
     height: 200px;
 }
