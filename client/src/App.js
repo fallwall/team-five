@@ -49,18 +49,21 @@ class App extends Component {
     }
   }
 
-  handleLogin = async () => {
+  handleLogin = async (e) => {
+    e.preventDefault();
     const userData = await loginUser(this.state.userForm);
     this.setState({
       currentUser: decode(userData.token)
     })
-    localStorage.setItem("jwt", userData.token)
+    localStorage.setItem("jwt", userData.token);
+    this.handleChangeView();
   }
 
   handleRegister = async (e) => {
     e.preventDefault();
     await registerUser(this.state.userForm);
     this.handleLogin();
+    this.handleChangeView();
   }
 
   authHandleChange = (e) => {
@@ -143,7 +146,7 @@ class App extends Component {
         {this.state.view.loginView &&
           <Login
             onChange={this.authHandleChange}
-            nextButton={this.handleChangeView}
+
             username={this.state.userForm.username}
             onSubmit={this.handleLogin}
             password={this.state.userForm.password}
@@ -154,7 +157,7 @@ class App extends Component {
           <Register
             onChange={this.authHandleChange}
             onSubmit={this.handleRegister}
-            nextButton={this.handleChangeView}
+
             username={this.state.userForm.username}
             email={this.state.userForm.email}
             password={this.state.userForm.password}

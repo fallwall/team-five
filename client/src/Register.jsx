@@ -13,7 +13,7 @@ export default function Register(props) {
           <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange} />
         </div>
         <div className="button-div">
-          <button className="login-button" onClick={props.nextButton}>Register</button>
+          <button className="login-button" onClick={props.onSubmit}>Register</button>
         </div>
       </form>
     </div>

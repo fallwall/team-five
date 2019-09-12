@@ -12,7 +12,7 @@ export default function Login(props) {
         <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange}/>
         </div>
         <div className="button-div">
-        <button className="login-button" onClick={props.nextButton}>Login</button>
+        <button className="login-button" onClick={props.onSubmit}>Login</button>
         <button className="login-button" onClick={props.toRegisterView}>Register</button>
         </div>
       </form>
