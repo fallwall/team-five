@@ -1,11 +1,20 @@
 import React from 'react';
-import './App.css';
+
+import Scaler from './Scaler';
+import Login from './Login';
 import Wordbank from './Wordbank';
+
+import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-     <Wordbank />
+     
+
+      <Login />
+      <Scaler />
+      <Wordbank />
     </div>
   );
 }
