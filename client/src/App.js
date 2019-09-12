@@ -17,6 +17,10 @@ class App extends Component {
         feeling_scale: "",
         feelings: "",
         comment: ""
+      },
+      view: {
+        loginView: true,
+        formView: false
       }
     }
   }
@@ -34,32 +38,46 @@ class App extends Component {
   handleSubmit = async () => {
     const resp = await postLog(this.state.formData);
     console.log(resp);
-   }
-  
+    this.setState({
+      view: {
+        loginView: true,
+        formView: false
+      }
+    })
+  }
+
+  handleChangeView = () => {
+    this.setState({
+      view: {
+        loginView: false,
+        formView: true
+      }
+    })
+  }
 
   render() {
     return (
       <div className="App">
-      
+        {this.state.view.loginView &&
           <Login
             onChange={this.handleChange}
-          
+            nextButton={this.handleChangeView}
             username={this.state.formData.username}
           />
-     
-          <Scaler
-            onChange={this.handleChange}
-         
-            feeling_scale={this.state.formData.feeling_scale}
-          />
-   
-
-          <Wordbank
-            onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
-            comment={this.state.formData.comment}
-          />
-        
+        }
+        {this.state.view.formView &&
+          <>
+            <Scaler
+              onChange={this.handleChange}
+              feeling_scale={this.state.formData.feeling_scale}
+            />
+            <Wordbank
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+              comment={this.state.formData.comment}
+            />
+          </>
+        }
       </div>
     );
   }
