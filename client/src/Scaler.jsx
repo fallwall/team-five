@@ -4,7 +4,7 @@ import { Label, Grid, Input } from "semantic-ui-react";
 import './scaler.css';
 
 const Scaler = (props) => {
-  const [value, setValue] = useState(3);
+  const [value, setValue] = useState(2);
 
   const settings = {
     start: 0,
@@ -52,15 +52,14 @@ const Scaler = (props) => {
       <p>How are you feeling today?</p>
       <Grid>
         <Grid.Column width={16}>
-          <Slider value={value} color="black" style={{'background-color': 'white'}} settings={settings} />
+          <Slider value={value} color="black" style={{ 'background-color': 'white' }} settings={settings} />
         </Grid.Column>
         <Grid.Column width={16}>
-          <Input placeholder="Enter Value" onChange={handleValueChange} />
           <Label color="blue">{value + 1}</Label>
           <Label color="blue">{translator(value)}</Label>
         </Grid.Column>
       </Grid>
-      <button name="feeling_scale" value={props.value} onChange={props.onChange} onClick={props.nextButton}>Next</button>
+
     </div>
   );
 };
