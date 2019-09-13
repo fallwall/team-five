@@ -1,4 +1,5 @@
 import React from 'react';
+import Jump from 'react-reveal/Jump';
 import './login.css';
 
 export default function Login(props) {
@@ -12,8 +13,8 @@ export default function Login(props) {
         <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange}/>
         </div>
         <div className="button-div">
-        <button className="login-button" onClick={props.onSubmit}>Login</button>
-        <button className="login-button" onClick={props.toRegisterView}>Register</button>
+        <button className="login-button" onClick={props.onSubmit}><Jump>Login</Jump></button>
+        <button className="login-button" onClick={props.toRegisterView}><Jump>Register</Jump></button>
         </div>
       </form>
     </div>

@@ -100,11 +100,11 @@ class App extends Component {
   }
 
 
-  handleChange = (e) => {
-    const { name, value } = e.target;
+  handleChange = (ev) => {
+    const { name, value } = ev.target;
     this.setState(prevState => ({
-      userForm: {
-        ...prevState.userForm,
+      formData: {
+        ...prevState.formData,
         [name]: value
       }
     }))
@@ -156,19 +156,32 @@ class App extends Component {
     ev.preventDefault();
     const feeling = ev.target.name;
     this.state.formData.feelings.indexOf(feeling) === -1 ?
-    this.setState(prevState => ({
-      formData: {
-        ...prevState.formData,
-        feelings: [...prevState.formData.feelings, feeling]
-      }
-    }))
+      this.setState(prevState => ({
+        formData: {
+          ...prevState.formData,
+          feelings: [...prevState.formData.feelings, feeling]
+        }
+      }))
       :
       this.setState(prevState => ({
         formData: {
           ...prevState.formData,
-          feelings: prevState.formData.feelings.filter(f=> f !== feeling)
+          feelings: prevState.formData.feelings.filter(f => f !== feeling)
         }
       }))
+  }
+
+  setScale = (ev) => {
+    const scale = ev;
+    if (!scale) {
+      scale = 0;
+    }
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        feeling_scale: scale
+      }
+    }))
   }
 
   render() {
@@ -199,6 +212,7 @@ class App extends Component {
             <Scaler
               onChange={this.handleChange}
               feeling_scale={this.state.formData.feeling_scale}
+              setScale={this.setScale}
             />
             <Wordbank
               onChange={this.handleChange}
