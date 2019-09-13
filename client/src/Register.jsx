@@ -1,9 +1,10 @@
 import React from 'react';
 import Jump from 'react-reveal/Jump';
+import './login.css';
 
 export default function Register(props) {
   return (
-    <div className="register-div">
+    <div className="login-div">
       <form>
         <div className="form-content">
           <label className="name-label" htmlFor="username">Name</label>
