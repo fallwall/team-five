@@ -1,5 +1,4 @@
 import React from 'react';
-import Jump from 'react-reveal/Jump';
 import './login.css';
 
 export default function Register(props) {
@@ -19,8 +18,8 @@ export default function Register(props) {
           </select>
         </div>
         <div className="button-div">
-          <button className="login-button" onClick={props.onSubmit}><Jump>Register</Jump></button>
-          <button className="login-button" onClick={props.backtoLogin}><Jump>Back</Jump></button>
+          <button className="login-button" onClick={props.onSubmit}>Register</button>
+          <button className="login-button" onClick={props.backtoLogin}>Back</button>
         </div>
       </form>
     </div>
