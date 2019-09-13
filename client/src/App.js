@@ -82,8 +82,7 @@ class App extends Component {
     this.handleChangeView();
   }
 
-  handleRegister = async (e) => {
-    e.preventDefault();
+  handleRegister = async () => {
     await registerUser(this.state.userForm);
     this.handleLogin();
     this.handleChangeView();
@@ -245,17 +244,17 @@ class App extends Component {
         }
         {this.state.view.formView &&
           <>
-          <div class="combine-compenents">
-            <Scaler
-              onChange={this.handleChange}
-              feeling_scale={this.state.formData.feeling_scale}
-              setScale={this.setScale}
-              onSubmit={this.handleSubmit}
-              feelings={this.state.formData.feelings}
-              setFeelings={this.setFeelings}
-              comment={this.state.formData.comment}
-            />
-              </div>
+            <div className="combine-compenents">
+              <Scaler
+                onChange={this.handleChange}
+                feeling_scale={this.state.formData.feeling_scale}
+                setScale={this.setScale}
+                onSubmit={this.handleSubmit}
+                feelings={this.state.formData.feelings}
+                setFeelings={this.setFeelings}
+                comment={this.state.formData.comment}
+              />
+            </div>
 
           </>
         }

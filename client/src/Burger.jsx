@@ -9,7 +9,7 @@ export default class Burger extends React.Component {
 
   render() {
     return (
-      <Menu right>
+      <Menu right noOverlay>
         {this.props.currentUser &&
           <a id="hi" className="menu-item" href="/">Hi, {this.props.currentUser.username}</a>}
         {this.props.currentUser && (this.props.currentUser.username === "sara" &&

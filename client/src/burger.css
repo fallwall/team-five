@@ -2,9 +2,16 @@
 a {
   text-decoration: none;
 }
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
 
 .bm-morph-shape {
   fill: rgb(249, 249, 249, 1);
+  top: 0;
 }
 
 .menu-item, .menu-item--small {
@@ -41,4 +48,10 @@ a {
 .bm-menu {
   background: rgb(249, 249, 249, 1);
   overflow: hidden;
+}
+
+.overlay {
+  background: rgba(0,0,0,0);
+  /* fill: rgb(249, 249, 249, 1); */
+  /* top: 0; */
 }
