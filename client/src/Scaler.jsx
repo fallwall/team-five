@@ -2,6 +2,7 @@ import React from 'react';
 import { Slider } from "react-semantic-ui-range";
 import { Label, Grid } from "semantic-ui-react";
 import './scaler.css';
+import Image from './Slider.png'
 
 const Scaler = (props) => {
 
@@ -43,7 +44,9 @@ const Scaler = (props) => {
   return (
     <div className="scaler">
       <h1 class="title">How are you feeling today?</h1>
-      <Grid>
+      <img class="landingicons" src={Image} />
+      <div className="slider-background">
+      <Grid className="slider-bar">
         <Grid.Column width={16}>
           <Slider value={props.feeling_scale} color="black" settings={settings} />
         </Grid.Column>
@@ -54,8 +57,10 @@ const Scaler = (props) => {
           <Label color="blue">{translator(props.feeling_scale)}</Label>
         </Grid.Column>
       </Grid>
+      </div>
       <>
       <div className="wordbank-container" >
+          <h1 class="feelings">Which words describe how you feel?</h1>
         <div className="word-div">
           <button className={isChecked("tired")? "button-checked": "button-unchecked"} name="tired" onClick={props.setFeelings}>Tired</button>
           <button className={isChecked("anxious")? "button-checked": "button-unchecked"} name="anxious" onClick={props.setFeelings}>Anxious</button>
@@ -77,7 +82,7 @@ const Scaler = (props) => {
           <button className={isChecked("worried")? "button-checked": "button-unchecked"} name="worried" onClick={props.setFeelings}>Worried</button>
         </div>
         <textarea placeholder="Do you have anything you'd like to share with your teacher? (Optional)" value={props.comment} name="comment" onChange={props.onChange}></textarea>
-        <button onClick={props.onSubmit}>Submit</button>
+        <button class="submit" onClick={props.onSubmit}>Submit</button>
       </div>
     </>
     </div>
