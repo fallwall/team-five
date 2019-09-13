@@ -1,28 +1,20 @@
 .title {
   text-align: center;
-  margin: 0 auto;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
-.scaler {
+.feelings {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* .scaler {
   width: 900px;
   height: 600px;
-  /* margin: 0 auto;
-  display:flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center; */
-}
+} */
 
 .wordbank-container {
-  /* width: 900px;
-  height: 600px; */
-  /* border: 2px solid green; */
-  /* display: flex;
-  flex-direction: row; */
   margin: 0 auto;
   display:flex;
   flex-direction: column;
@@ -33,7 +25,16 @@
 }
 
 .word-div {
-  /* width: 80%; */
+  width: 70%;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 button {
@@ -48,12 +49,16 @@ button {
   padding-right: 15px;
 }
 
+.submit {
+  background: #509CE2;
+}
 textarea {
-  width: 90%;
+  width: 80%;
   height: 200px;
   font-size: 2.5em;
   font-family: robotto;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .button-checked {
@@ -62,4 +67,20 @@ background-color:grey;
 
 .button-unchecked {
 background-color:#509CE2 !important;
+}
+
+/* .slider-background {
+  background-image: url("Slider.svg");
+  width: 800px;
+  height: 175px;
+  margin-top: -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+} */
+
+.slider-bar {
+  border: 2px solid green;
+  z-index: 2;
+  margin-top: 50px;
 }
