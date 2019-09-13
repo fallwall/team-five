@@ -22,7 +22,8 @@ class App extends Component {
       userForm: {
         username: "",
         email: "",
-        password: ""
+        password: "",
+        account_type: ""
       },
       currentUser: null,
       formData: {
@@ -53,13 +54,13 @@ class App extends Component {
   handleLogin = async (e) => {
     e.preventDefault();
     const userData = await loginUser(this.state.userForm);
-
     this.setState({
       currentUser: decode(userData.token),
       userForm: {
         username: "",
         email: "",
-        password: ""
+        password: "",
+        account_type: ""
       }
     })
     this.state.currentUser && this.setState(prevState => ({
@@ -196,7 +197,7 @@ class App extends Component {
         {this.state.view.loginView &&
           <Login
             onChange={this.authHandleChange}
-
+            account_type={this.state.userForm.account_type}
             username={this.state.userForm.username}
             onSubmit={this.handleLogin}
             password={this.state.userForm.password}
@@ -211,6 +212,7 @@ class App extends Component {
             username={this.state.userForm.username}
             email={this.state.userForm.email}
             password={this.state.userForm.password}
+            account_type={this.state.userForm.account_type}
           />
         }
         {this.state.view.formView &&

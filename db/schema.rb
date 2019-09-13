@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_13_035858) do
+ActiveRecord::Schema.define(version: 2019_09_13_112343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2019_09_13_035858) do
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.string "feelings", default: [], array: true
     t.integer "feeling_scale"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_09_13_035858) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "account_type"
   end
 
   add_foreign_key "logs", "users"
