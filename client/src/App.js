@@ -29,7 +29,7 @@ class App extends Component {
       currentUser: null,
       formData: {
         user_id: "",
-        feeling_scale: "",
+        feeling_scale: 2,
         feelings: [],
         comment: ""
       },
@@ -202,7 +202,7 @@ class App extends Component {
   }
 
   setScale = (ev) => {
-    const scale = ev;
+    let scale = ev;
     if (!scale) {
       scale = 0;
     }
