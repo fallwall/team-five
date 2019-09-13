@@ -99,3 +99,9 @@ background-color:#509CE2 !important;
 .slider-foreground-child {
   background:red;
 }
+
+.slider-bar {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1em;
+}
