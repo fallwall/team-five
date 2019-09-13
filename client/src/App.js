@@ -245,7 +245,7 @@ class App extends Component {
         }
         {this.state.view.formView &&
           <>
-          <div class="combine-compenents">
+          <div className="combine-compenents">
             <Scaler
               onChange={this.handleChange}
               feeling_scale={this.state.formData.feeling_scale}
