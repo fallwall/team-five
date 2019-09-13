@@ -1,3 +1,4 @@
+
 a {
   text-decoration: none;
 }
@@ -9,7 +10,7 @@ a {
 .menu-item, .menu-item--small {
   color: #509ce2;;
   font-size: 2em;
-  margin: 3em 1em;
+  margin: 1.6em 0.7em;
   font-weight: 700;
 }
 
@@ -39,4 +40,5 @@ a {
 
 .bm-menu {
   background: rgb(249, 249, 249, 1);
+  overflow: hidden;
 }

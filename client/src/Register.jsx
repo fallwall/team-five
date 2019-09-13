@@ -11,7 +11,7 @@ export default function Register(props) {
           <label className="name-label" htmlFor="email">Email</label>
           <input className="email" name="email" type="text" value={props.email} onChange={props.onChange} />
           <label className="password-label" htmlFor="password">Password</label>
-          <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange} />
+          <input className="password-input hidden" name="password" type="password" value={props.password} onChange={props.onChange} />
           <select className="hidden" name="account_type" value={props.account_type} onChange={props.onChange}>
             <option name="account_type" value="student">Student</option>
             <option name="account_type" value="teacher">Teacher</option>
