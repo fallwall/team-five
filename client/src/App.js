@@ -13,7 +13,6 @@ import Register from './Register';
 import Wordbank from './Wordbank';
 import Thankyou from './ThankYou';
 import Burger from './Burger';
-import Dashboard from './Dashbaord';
 import './App.css';
 
 
@@ -242,11 +241,6 @@ class App extends Component {
             email={this.state.userForm.email}
             password={this.state.userForm.password}
             account_type={this.state.userForm.account_type}
-          />
-        }
-        {this.state.view.dashboardView &&
-          <Dashboard
-            logs={this.state.logs}
           />
         }
         {this.state.view.formView &&
