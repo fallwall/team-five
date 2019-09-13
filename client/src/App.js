@@ -245,18 +245,17 @@ class App extends Component {
         }
         {this.state.view.formView &&
           <>
+          <div class="combine-compenents">
             <Scaler
               onChange={this.handleChange}
               feeling_scale={this.state.formData.feeling_scale}
               setScale={this.setScale}
-            />
-            <Wordbank
-              onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               feelings={this.state.formData.feelings}
               setFeelings={this.setFeelings}
               comment={this.state.formData.comment}
             />
+              </div>
 
           </>
         }

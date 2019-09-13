@@ -1,8 +1,10 @@
 .login-div {
     width: 900px;
-    height: 600px;
-    border: 2px solid green;
-    background-image: url("bg_rounded.png");
+    height: 1200px;
+    border: 2px solid grey;
+    background-image: url("Login.png");
+    background-repeat: no-repeat;
+    background-size: 900px 1200px;
     display: flex;
     justify-content: center;
     align-content: center;

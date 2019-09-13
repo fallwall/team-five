@@ -1,7 +1,65 @@
-.scaler {
-  background-image: url("bg_rounded.png");
-  width: 900px;
-  height: 600px;
-  border: 2px solid green;
+.title {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
+.scaler {
+  width: 900px;
+  height: 600px;
+  /* margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center; */
+}
+
+.wordbank-container {
+  /* width: 900px;
+  height: 600px; */
+  /* border: 2px solid green; */
+  /* display: flex;
+  flex-direction: row; */
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.word-div {
+  /* width: 80%; */
+}
+
+button {
+  /* background: #509CE2 !important; */
+  color: white;
+  /* width: 200px; */
+  height: 50px;
+  border-radius: 10px;
+  font-size: 2em;
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+textarea {
+  width: 90%;
+  height: 200px;
+  font-size: 2.5em;
+  font-family: robotto;
+  padding: 20px;
+}
+
+.button-checked {
+background-color:grey;
+}
+
+.button-unchecked {
+background-color:#509CE2 !important;
+}
