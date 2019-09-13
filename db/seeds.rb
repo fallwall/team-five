@@ -62,3 +62,30 @@ student_list = [
 student_list.each do |username, password, email, account_type|
   User.create(username: username, password: password, email: email, account_type: account_type)
 end
+
+log_list = [
+  [3,
+  "meh. feeling ok.",
+  1,
+  ["hungry", "bored", "frustrated"]
+  ],
+  [4,
+  "excited about science fair",
+  3,
+  ["hopeful", "excited"]
+  ],
+  [1,
+  "Missing Ms.Sanders",
+  2,
+  ["hungry", "angry"]
+  ],
+  [5,
+  "So proud of grade in last quarter's grade.",
+  3,
+  ["determined", "excited", "proud", "confident"]
+  ]
+]
+
+log_list.each do |feeling_scale, comment, user_id, feelings|
+  Log.create(feeling_scale: feeling_scale, comment: comment, user_id: user_id, feelings: feelings)
+end
