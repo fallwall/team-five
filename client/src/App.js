@@ -11,6 +11,7 @@ import Login from './Login';
 import Register from './Register';
 import Wordbank from './Wordbank';
 import Thankyou from './ThankYou';
+import Burger from './Burger';
 import './App.css';
 
 
@@ -189,6 +190,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Burger />
         {this.state.view.loginView &&
           <Login
             onChange={this.authHandleChange}
@@ -223,6 +225,7 @@ class App extends Component {
               setFeelings={this.setFeelings}
               comment={this.state.formData.comment}
             />
+            
           </>
         }
         {this.state.view.thankyouView &&
