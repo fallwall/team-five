@@ -1,19 +1,22 @@
+
 a {
   text-decoration: none;
 }
 
 .bm-morph-shape {
-  fill: #373a47;
+  fill: rgb(249, 249, 249, 1);
 }
 
 .menu-item, .menu-item--small {
-  color: white;
-  margin: 1em 0.5em;
+  color: #509ce2;;
+  font-size: 2em;
+  margin: 1.6em 0.7em;
+  font-weight: 700;
 }
 
 .bm-cross {
-  font-size: 2em;
-  background-color:white;
+  /* font-size: 4em; */
+  background-color: #509ce2;;
 }
 
 /* Position and sizing of burger button */
@@ -27,10 +30,15 @@ a {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #6a7bc9;
+  background: #83c9fc;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #005da9;
+  background: #509ce2;
+}
+
+.bm-menu {
+  background: rgb(249, 249, 249, 1);
+  overflow: hidden;
 }

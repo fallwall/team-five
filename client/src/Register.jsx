@@ -1,5 +1,4 @@
 import React from 'react';
-import Jump from 'react-reveal/Jump';
 import './login.css';
 
 export default function Register(props) {
@@ -13,14 +12,14 @@ export default function Register(props) {
           <input className="email" name="email" type="text" value={props.email} onChange={props.onChange} />
           <label className="password-label" htmlFor="password">Password</label>
           <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange} />
-          <select name="account_type" value={props.account_type} onChange={props.onChange}>
+          <select className="hidden" name="account_type" value={props.account_type} onChange={props.onChange}>
             <option name="account_type" value="student">Student</option>
             <option name="account_type" value="teacher">Teacher</option>
           </select>
         </div>
         <div className="button-div">
-          <button className="login-button" onClick={props.onSubmit}><Jump>Register</Jump></button>
-          <button className="login-button" onClick={props.backtoLogin}><Jump>Back</Jump></button>
+          <button className="login-button" onClick={props.onSubmit}>Register</button>
+          <button className="login-button" onClick={props.backtoLogin}>Back</button>
         </div>
       </form>
     </div>
