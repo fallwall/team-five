@@ -29,7 +29,7 @@ class App extends Component {
       currentUser: null,
       formData: {
         user_id: "",
-        feeling_scale: "",
+        feeling_scale: 2,
         feelings: [],
         comment: ""
       },
@@ -202,7 +202,7 @@ class App extends Component {
   }
 
   setScale = (ev) => {
-    const scale = ev;
+    let scale = ev;
     if (!scale) {
       scale = 0;
     }
@@ -245,18 +245,17 @@ class App extends Component {
         }
         {this.state.view.formView &&
           <>
+          <div class="combine-compenents">
             <Scaler
               onChange={this.handleChange}
               feeling_scale={this.state.formData.feeling_scale}
               setScale={this.setScale}
-            />
-            <Wordbank
-              onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               feelings={this.state.formData.feelings}
               setFeelings={this.setFeelings}
               comment={this.state.formData.comment}
             />
+              </div>
 
           </>
         }

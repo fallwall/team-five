@@ -28,9 +28,7 @@ function Wordbank(props) {
           <button className={isChecked("proud")? "button-checked": "button-unchecked"} name="proud" onClick={props.setFeelings}>Proud</button>
           <button className={isChecked("worried")? "button-checked": "button-unchecked"} name="worried" onClick={props.setFeelings}>Worried</button>
         </div>
-
-        <h1>Optional: Is there anything else you would like your teacher to know today?</h1>
-        <textarea value={props.comment} name="comment" onChange={props.onChange}></textarea>
+        <textarea placeholder="Do you have anything you'd like to share with your teacher? (Optional)" value={props.comment} name="comment" onChange={props.onChange}></textarea>
         <button onClick={props.onSubmit}>Submit</button>
       </div>
     </>

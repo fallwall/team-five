@@ -1,3 +1,19 @@
+.App {
+    width: 900px;
+    height: 1200px;
+    margin: 0 auto;
+    /* border: 2px solid grey; */
+    margin-top: 100px;
+}
 
+.combine-compenents {
+    width: 900px;
+    height: 1200px;
+    background-image: url("Home_Screen.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid grey;
+    margin: 0 auto;
+}
 
 
