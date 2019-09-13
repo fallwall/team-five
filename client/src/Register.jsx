@@ -1,4 +1,5 @@
 import React from 'react';
+import Jump from 'react-reveal/Jump';
 
 export default function Register(props) {
   return (
@@ -7,12 +8,13 @@ export default function Register(props) {
         <div className="form-content">
           <label className="name-label" htmlFor="username">Name</label>
           <input className="name-input" name="username" value={props.username} type="text" onChange={props.onChange} />
-          <input className="email" name="email" />
+          <label className="name-label" htmlFor="email">Email</label>
+          <input className="email" name="email" type="text" value={props.email} onChange={props.onChange} />
           <label className="password-label" htmlFor="password">Password</label>
-          <input className="password-input" name="password" type="password" />
+          <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange} />
         </div>
         <div className="button-div">
-          <button className="login-button" onClick={props.nextButton}>Register</button>
+          <button className="login-button" onClick={props.onSubmit}><Jump>Register</Jump></button>
         </div>
       </form>
     </div>

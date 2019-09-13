@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Slider } from "react-semantic-ui-range";
-import { Label, Grid, Input } from "semantic-ui-react";
+import { Label, Grid } from "semantic-ui-react";
 import './scaler.css';
 
 const Scaler = (props) => {
-  const [value, setValue] = useState(2);
 
   const settings = {
     start: 0,
@@ -12,17 +11,8 @@ const Scaler = (props) => {
     max: 4,
     step: 1,
     onChange: value => {
-      setValue(value);
+      props.setScale(value);
     }
-  };
-
-  const handleValueChange = (e) => {
-    let value = parseInt(e.target.value);
-    if (!value) {
-      value = 0;
-    }
-    setValue(e.target.value);
-    props.handleChange(parseInt(e.target.value));
   };
 
   const translator = (val) => {
@@ -52,14 +42,13 @@ const Scaler = (props) => {
       <p>How are you feeling today?</p>
       <Grid>
         <Grid.Column width={16}>
-
-          <Slider value={value} color="black" settings={settings} />
+          <Slider value={props.feeling_scale} color="black" settings={settings} />
         </Grid.Column>
         <Grid.Column width={16}>
-          <Input placeholder="Enter Value" onChange={handleValueChange} />
-          <Label color="red">{value + 1}</Label>
 
-          <Label color="blue">{translator(value)}</Label>
+          <Label color="red">{props.feeling_scale + 1}</Label>
+
+          <Label color="blue">{translator(props.feeling_scale)}</Label>
         </Grid.Column>
       </Grid>
 
