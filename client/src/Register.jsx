@@ -16,6 +16,7 @@ export default function Register(props) {
         </div>
         <div className="button-div">
           <button className="login-button" onClick={props.onSubmit}><Jump>Register</Jump></button>
+          <button className="login-button" onClick={props.backtoLogin}><Jump>Back</Jump></button>
         </div>
       </form>
     </div>

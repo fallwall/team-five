@@ -6,14 +6,14 @@ a {
   fill: #373a47;
 }
 
-.menu-item {
+.menu-item, .menu-item--small {
   color: white;
   margin: 1em 0.5em;
 }
 
 .bm-cross {
   font-size: 2em;
-  background-color:white;;
+  background-color:white;
 }
 
 /* Position and sizing of burger button */
@@ -27,10 +27,10 @@ a {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #6a7bc9;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #a90000;
+  background: #005da9;
 }
