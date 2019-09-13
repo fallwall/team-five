@@ -1,0 +1,36 @@
+a {
+  text-decoration: none;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.menu-item, .menu-item--small {
+  color: white;
+  margin: 1em 0.5em;
+}
+
+.bm-cross {
+  font-size: 2em;
+  background-color:white;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #6a7bc9;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #005da9;
+}

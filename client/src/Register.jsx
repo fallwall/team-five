@@ -1,9 +1,10 @@
 import React from 'react';
 import Jump from 'react-reveal/Jump';
+import './login.css';
 
 export default function Register(props) {
   return (
-    <div className="register-div">
+    <div className="login-div">
       <form>
         <div className="form-content">
           <label className="name-label" htmlFor="username">Name</label>
@@ -15,6 +16,7 @@ export default function Register(props) {
         </div>
         <div className="button-div">
           <button className="login-button" onClick={props.onSubmit}><Jump>Register</Jump></button>
+          <button className="login-button" onClick={props.backtoLogin}><Jump>Back</Jump></button>
         </div>
       </form>
     </div>
