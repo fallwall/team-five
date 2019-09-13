@@ -47,3 +47,7 @@ input {
 .login-button {
     background: #4a4a4a;
 }
+
+.hidden {
+  display:none;
+}

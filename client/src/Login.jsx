@@ -12,7 +12,8 @@ export default function Login(props) {
           <label className="password-label" htmlFor="password">Password</label>
           <input className="password-input" name="password" type="password" value={props.password} onChange={props.onChange} />
           <label className="password-label" htmlFor="account_type">Account Type</label>
-          <select name="account_type" value={props.account_type} onChange={props.onChange}>
+
+          <select className="hidden" name="account_type" value={props.account_type} onChange={props.onChange}>
             <option name="account_type" value="student">Student</option>
             <option name="account_type" value="teacher">Teacher</option>
           </select>
