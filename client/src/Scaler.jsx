@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Slider } from "react-semantic-ui-range";
-import { Label, Grid, Input } from "semantic-ui-react";
+import { Label, Grid } from "semantic-ui-react";
 import './scaler.css';
 
 const Scaler = (props) => {
@@ -56,7 +56,7 @@ const Scaler = (props) => {
           <Slider value={value} color="black" settings={settings} />
         </Grid.Column>
         <Grid.Column width={16}>
-          <Input placeholder="Enter Value" onChange={handleValueChange} />
+
           <Label color="red">{value + 1}</Label>
 
           <Label color="blue">{translator(value)}</Label>

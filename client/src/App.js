@@ -27,7 +27,7 @@ class App extends Component {
       formData: {
         user_id: "",
         feeling_scale: "",
-        feelings: "",
+        feelings: [],
         comment: ""
       },
       view: {
@@ -52,9 +52,21 @@ class App extends Component {
   handleLogin = async (e) => {
     e.preventDefault();
     const userData = await loginUser(this.state.userForm);
+
     this.setState({
-      currentUser: decode(userData.token)
+      currentUser: decode(userData.token),
+      userForm: {
+        username: "",
+        email: "",
+        password: ""
+      }
     })
+    this.state.currentUser && this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        user_id: this.state.currentUser.user_id
+      }
+    }))
     localStorage.setItem("jwt", userData.token);
     this.handleChangeView();
   }
@@ -140,6 +152,18 @@ class App extends Component {
     })
   }
 
+  setFeelings = (ev) => {
+    ev.preventDefault();
+    const feeling = ev.target.name;
+    this.setState(prevState => ({
+      formData: {
+        ...prevState.formData,
+        feelings: [...prevState.formData.feelings, feeling]
+      }
+    }))
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -172,6 +196,8 @@ class App extends Component {
             <Wordbank
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
+              feelings={this.state.formData.feelings}
+              setFeelings={this.setFeelings}
               comment={this.state.formData.comment}
             />
           </>

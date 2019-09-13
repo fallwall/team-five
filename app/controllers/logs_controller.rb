@@ -16,14 +16,14 @@ class LogsController < ApplicationController
     if @log.save
       render json: @log, status: :created
     else
-      redner json: @log.errors, status: :unprocessable_entity
+      render json: @log.errors, status: :unprocessable_entity
     end
   end
 
   private
 
   def log_params
-    params.require(:log).permit(:feeling_scale, :feelings, :comment, :username)
+    params.require(:log).permit(:feeling_scale, :feelings, :comment, :user_id, feelings: [])
   end
 
 end
