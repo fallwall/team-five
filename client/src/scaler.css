@@ -80,7 +80,22 @@ background-color:#509CE2 !important;
 } */
 
 .slider-bar {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   z-index: 2;
   margin-top: 50px;
+}
+
+.slider-back {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-foreground {
+  width: 100%;
+  display: flex; 
+  flex-basis: 20% 20% 20% 20% 20%;
+}
+
+.slider-foreground-child {
+  background:red;
 }
