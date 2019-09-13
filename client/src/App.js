@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import decode from 'jwt-decode';
 import {
+  getLogs,
   postLog,
   loginUser,
   registerUser
@@ -12,6 +13,7 @@ import Register from './Register';
 import Wordbank from './Wordbank';
 import Thankyou from './ThankYou';
 import Burger from './Burger';
+import Dashboard from './Dashbaord';
 import './App.css';
 
 
@@ -36,12 +38,20 @@ class App extends Component {
         loginView: true,
         registerView: false,
         formView: false,
-        thankyouView: false
-      }
+        thankyouView: false,
+        dashboardView: false
+      },
+      logs: []
     }
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
+    const logs = await getLogs();
+    if (logs) {
+      this.setState({
+        logs
+      })
+    }
     const checkUser = localStorage.getItem("jwt");
     if (checkUser) {
       const user = decode(checkUser);
@@ -96,7 +106,8 @@ class App extends Component {
         loginView: false,
         registerView: true,
         formView: false,
-        thankyouView: false
+        thankyouView: false,
+        dashboardView: false
       }
     })
   }
@@ -120,7 +131,8 @@ class App extends Component {
         loginView: false,
         registerView: false,
         formView: false,
-        thankyouView: true
+        thankyouView: true,
+        dashboardView: false
       }
     })
   }
@@ -131,7 +143,8 @@ class App extends Component {
         loginView: false,
         registerView: false,
         formView: true,
-        thankyouView: false
+        thankyouView: false,
+        dashboardView: false
       }
     })
   }
@@ -145,7 +158,8 @@ class App extends Component {
         loginView: true,
         registerView: false,
         formView: false,
-        thankyouView: false
+        thankyouView: false,
+        dashboardView: false
       },
       formData: {
         username: "",
@@ -153,6 +167,19 @@ class App extends Component {
         feelings: "",
         comment: ""
       }
+    })
+  }
+
+  todashboardView = (ev) => {
+    ev.preventDefault();
+    this.setState({
+      view: {
+        loginView: false,
+        registerView: false,
+        formView: false,
+        thankyouView: false,
+        dashboardView: true
+      },
     })
   }
 
@@ -193,6 +220,8 @@ class App extends Component {
       <div className="App">
         <Burger
           currentUser={this.state.currentUser}
+          logout={this.backtoLogin}
+          todashboardView={this.todashboardView}
         />
         {this.state.view.loginView &&
           <Login
@@ -213,6 +242,11 @@ class App extends Component {
             email={this.state.userForm.email}
             password={this.state.userForm.password}
             account_type={this.state.userForm.account_type}
+          />
+        }
+        {this.state.view.dashboardView &&
+          <Dashboard
+            logs={this.state.logs}
           />
         }
         {this.state.view.formView &&
