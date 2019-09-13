@@ -136,7 +136,9 @@ class App extends Component {
 
   backtoLogin = (ev) => {
     ev.preventDefault();
+    localStorage.removeItem("jwt");
     this.setState({
+      currentUser: null,
       view: {
         loginView: true,
         registerView: false,
