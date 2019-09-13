@@ -26,3 +26,11 @@ textarea {
     width: 90%;
     height: 200px;
 }
+
+.button-checked {
+background-color:red;
+}
+
+.button-unchecked {
+  background-color:blue;
+}

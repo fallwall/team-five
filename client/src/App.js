@@ -155,13 +155,20 @@ class App extends Component {
   setFeelings = (ev) => {
     ev.preventDefault();
     const feeling = ev.target.name;
+    this.state.formData.feelings.indexOf(feeling) === -1 ?
     this.setState(prevState => ({
       formData: {
         ...prevState.formData,
         feelings: [...prevState.formData.feelings, feeling]
       }
     }))
-
+      :
+      this.setState(prevState => ({
+        formData: {
+          ...prevState.formData,
+          feelings: prevState.formData.feelings.filter(f=> f !== feeling)
+        }
+      }))
   }
 
   render() {
