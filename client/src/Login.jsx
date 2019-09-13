@@ -1,9 +1,14 @@
 import React from 'react';
 import './login.css';
+import Logo from './Logo.svg'
+import './scaler.css';
+
 
 export default function Login(props) {
   return (
+    <div className="login-container">
     <div className="login-div">
+      {/* <img class="logo-img" src={Logo} /> */}
       <form>
         <div className="form-content">
           <label className="name-label" htmlFor="username">Name</label>
@@ -22,6 +27,7 @@ export default function Login(props) {
           <button className="login-button" onClick={props.toRegisterView}>Register</button>
         </div>
       </form>
+      </div>
     </div>
   )
 }

@@ -15,7 +15,6 @@ import Thankyou from './ThankYou';
 import Burger from './Burger';
 import './App.css';
 
-
 class App extends Component {
   constructor() {
     super();

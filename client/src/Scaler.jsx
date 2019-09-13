@@ -2,7 +2,8 @@ import React from 'react';
 import { Slider } from "react-semantic-ui-range";
 import { Label, Grid } from "semantic-ui-react";
 import './scaler.css';
-import Image from './Slider.png'
+import Image from './Slider2.png'
+import Logo from './Logo.svg'
 
 const Scaler = (props) => {
 
@@ -43,8 +44,11 @@ const Scaler = (props) => {
 
   return (
     <div className="scaler">
+      {/* <img class="logo-img" src={Logo} /> */}
       <h1 class="title">How are you feeling today?</h1>
-      <img class="landingicons" src={Image} />
+      <div className="smile-div">
+      <img class="smile-img" src={Image} />
+      </div>
       <div className="slider-background">
       <Grid className="slider-bar">
         <Grid.Column width={16}>
@@ -52,7 +56,7 @@ const Scaler = (props) => {
         </Grid.Column>
         <Grid.Column width={16}>
 
-          <Label color="red">{props.feeling_scale + 1}</Label>
+          {/* <Label color="red">{props.feeling_scale + 1}</Label> */}
 
           <Label color="blue">{translator(props.feeling_scale)}</Label>
         </Grid.Column>

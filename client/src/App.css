@@ -25,6 +25,7 @@
   background-repeat: no-repeat;
   background-size: 900px 1200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -37,5 +38,7 @@
 .thankyou-text {
   font-weight: 700;
   font-size: 2em;
+  text-align: center;
+  width: 70%;
 }
 
