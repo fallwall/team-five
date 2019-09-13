@@ -77,7 +77,7 @@ const Scaler = (props) => {
           <button className={isChecked("worried")? "button-checked": "button-unchecked"} name="worried" onClick={props.setFeelings}>Worried</button>
         </div>
         <textarea placeholder="Do you have anything you'd like to share with your teacher? (Optional)" value={props.comment} name="comment" onChange={props.onChange}></textarea>
-        <button onClick={props.onSubmit}>Submit</button>
+        <button onClick={props.onSubmit} className="logout">Submit</button>
       </div>
     </>
     </div>
