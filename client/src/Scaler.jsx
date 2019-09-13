@@ -39,7 +39,7 @@ const Scaler = (props) => {
 
   return (
     <div className="scaler">
-      <p>How are you feeling today?</p>
+      <h1>How are you feeling today?</h1>
       <Grid>
         <Grid.Column width={16}>
           <Slider value={props.feeling_scale} color="black" settings={settings} />
