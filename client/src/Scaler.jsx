@@ -4,6 +4,9 @@ import { Label, Grid } from "semantic-ui-react";
 import './scaler.css';
 import Positive from './positive.png';
 import Negative from './negative.png';
+import Image from './Slider2.png'
+import Logo from './Logo.svg'
+
 
 const Scaler = (props) => {
 
@@ -44,6 +47,7 @@ const Scaler = (props) => {
 
   return (
     <div className="scaler">
+
       <h1 className="title">How are you feeling today?</h1>
       <div className="slider-back">
         <img className="icons" src={Negative} />
@@ -65,6 +69,7 @@ const Scaler = (props) => {
             <Grid.Column width={16}>
 
               <Label color="red">{props.feeling_scale + 1}</Label>
+
 
               <Label color="blue">{translator(props.feeling_scale)}</Label>
             </Grid.Column>
